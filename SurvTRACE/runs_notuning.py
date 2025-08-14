@@ -16,7 +16,7 @@ from survtrace.evaluate_utils import plot_survival_analysis
 def parse_args():
     parser = argparse.ArgumentParser(description="Run SurvTrace Experiment")
     parser.add_argument("--dataset", type=str, default="metabric", 
-                        choices=["metabric", "support", "custom", "flchain", "gbsg", "custom_agg"])
+                        choices=["metabric", "support", "flchain", "gbsg"])
     parser.add_argument("--attn", type=str, default="saint", 
                         choices=["saint", "regular"])
     parser.add_argument("--n_trials", type=int, default=100)
@@ -59,8 +59,6 @@ def main():
         # --- Use best params directly ---
         if args.hidden_size: 
             config.hidden_size = args.hidden_size
-        if args.batch_size: 
-            config.batch_size = args.batch_size
         if args.intermediate_size:
             config.intermediate_size = args.intermediate_size
         if args.num_hidden_layers:
@@ -167,5 +165,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
