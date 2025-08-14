@@ -16,7 +16,7 @@ from runs_main import run_optuna_then_evaluate_n_seeds
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Run SurvTrace Experiment")
-    parser.add_argument("--dataset", type=str, default="metabric", choices=["metabric", "support", "custom", "flchain", "gbsg", "custom_agg"])
+    parser.add_argument("--dataset", type=str, default="metabric", choices=["metabric", "support", "flchain", "gbsg"])
     parser.add_argument("--n_trials", type=int, default=100)
     parser.add_argument("--n_seeds", type=int, default=10)
     parser.add_argument("--add_mask", action='store_true')
@@ -47,3 +47,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
